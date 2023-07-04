@@ -1,0 +1,55 @@
+name: build
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y inkscape x11-apps
+          python -m pip install --upgrade pip clickgen
+          pip install --force-reinstall --upgrade attrs
+        continue-on-error: false
+
+      - name: Build Breeze Source
+        working-directory: breeze/cursors/Breeze
+        run: |
+          bash build.sh;
+
+      - name: Build Breeze Light Source
+        working-directory: breeze/cursors/Breeze_Light
+        run: |
+          bash build.sh;
+
+      - name: Build Breeze
+        run: |
+          ctgen build.toml -d 'breeze/cursors/Breeze/build/x2/' -n 'Breeze' -c 'Breeze by the KDE VDG'
+          ctgen build.toml -d 'breeze/cursors/Breeze_Light/build/x2/' -n 'Breeze-Light' -c 'Breeze Light by the KDE VDG'
+
+      - name: Package
+        run: |
+          zip -j Breeze.zip themes/Breeze-Windows/*
+          zip -j Breeze-Light.zip themes/Breeze-Light-Windows/*
+          sha512sum Breeze.zip Breeze-Light.zip > sha512sum
+
+      - name: Publish
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "Breeze.zip,Breeze-Light.zip,sha512sum"
+          token: ${{ secrets.GITHUB_TOKEN }}
