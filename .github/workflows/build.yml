@@ -30,17 +30,19 @@ jobs:
       - name: Build Breeze Source
         working-directory: breeze/cursors/Breeze
         run: |
+          sed -i "s/SCALES=.*/SCALES=200/" build.sh
           bash build.sh;
 
       - name: Build Breeze Light Source
         working-directory: breeze/cursors/Breeze_Light
         run: |
+          sed -i "s/SCALES=.*/SCALES=200/" build.sh
           bash build.sh;
 
       - name: Build Breeze
         run: |
-          ctgen build.toml -d 'breeze/cursors/Breeze/build/x2/' -n 'Breeze' -c 'Breeze by the KDE VDG'
-          ctgen build.toml -d 'breeze/cursors/Breeze_Light/build/x2/' -n 'Breeze-Light' -c 'Breeze Light by the KDE VDG'
+          ctgen build.toml -d 'breeze/cursors/Breeze/build/x200/' -n 'Breeze' -c 'Breeze by the KDE VDG'
+          ctgen build.toml -d 'breeze/cursors/Breeze_Light/build/x200/' -n 'Breeze-Light' -c 'Breeze Light by the KDE VDG'
 
       - name: Package
         run: |

@@ -7,12 +7,11 @@ website = 'https://github.com/akiirui/breeze-for-windows'
 bitmaps_dir = 'breeze/cursors/Breeze/build/x2/' # This config will assigned with `ctgen -d <path>`
 out_dir = 'themes'
 platforms = 'windows'
-x11_sizes = ''
-win_size = 64
 
 [cursors]
 
 [cursors.fallback_settings]
+win_sizes = [64]
 x_hotspot = 32
 y_hotspot = 32
 win_delay = 1
