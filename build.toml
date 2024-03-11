@@ -20,85 +20,70 @@ win_delay = 1
 png = 'default.png'
 x_hotspot = 8
 y_hotspot = 8
-win_name = 'Default'
-x11_name = 'left_ptr'
+win_name = 'Pointer'
 
 [cursors.help]
 png = 'help.png'
 x_hotspot = 8
 y_hotspot = 8
 win_name = 'Help'
-x11_name = 'question_arrow'
 
 [cursors.progress]
 png = 'progress-*.png'
 x_hotspot = 8
 y_hotspot = 8
 win_name = 'Work'
-x11_name = 'left_ptr_watch'
 
 [cursors.wait]
 png = 'wait-*.png'
 win_name = 'Busy'
-x11_name = 'wait'
 
 [cursors.cross]
 png = 'crosshair.png'
 win_name = 'Cross'
-x11_name = 'cross'
 
 [cursors.text]
 png = 'text.png'
-win_name = 'IBeam'
-x11_name = 'xterm'
+win_name = 'Text'
 
 [cursors.pencil]
 png = 'pencil.png'
 x_hotspot = 8
 y_hotspot = 58
 win_name = 'Handwriting'
-x11_name = 'pencil'
 
 [cursors.dnd_no_drop]
 png = 'not-allowed.png'
-win_name = 'Unavailiable'
-x11_name = 'not-allowed'
+win_name = 'Unavailable'
 
 [cursors.size_ver]
 png = 'size_ver.png'
-win_name = 'Vertical'
-x11_name = 'sb_v_double_arrow'
+win_name = 'Vert'
 
 [cursors.size_hor]
 png = 'size_hor.png'
-win_name = 'Horizontal'
-x11_name = 'sb_h_double_arrow'
+win_name = 'Horz'
 
 [cursors.size_fdiag]
 png = 'size_fdiag.png'
-win_name = 'Diagonal_1'
-x11_name = 'bd_double_arrow'
+win_name = 'Dgn1'
 
 [cursors.size_bdiag]
 png = 'size_bdiag.png'
-win_name = 'Diagonal_2'
-x11_name = 'fd_double_arrow'
+win_name = 'Dgn2'
 
 [cursors.move]
 png = 'all-scroll.png'
 win_name = 'Move'
-x11_name = 'move'
 
 [cursors.center_ptr]
 png = 'center_ptr.png'
 x_hotspot = 40
 y_hotspot = 8
 win_name = 'Alternate'
-x11_name = 'center_ptr'
 
 [cursors.pointer]
 png = 'pointer.png'
 x_hotspot = 32
 y_hotspot = 8
 win_name = 'Link'
-x11_name = 'pointer'
