@@ -18,7 +18,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: |
@@ -30,24 +30,22 @@ jobs:
       - name: Build Breeze Source
         working-directory: breeze/cursors/Breeze
         run: |
-          sed -i "s/SCALES=.*/SCALES=200/" build.sh
           bash build.sh;
 
       - name: Build Breeze Light Source
         working-directory: breeze/cursors/Breeze_Light
         run: |
-          sed -i "s/SCALES=.*/SCALES=200/" build.sh
           bash build.sh;
 
       - name: Build Breeze
         run: |
-          ctgen build.toml -d 'breeze/cursors/Breeze/build/x200/' -n 'Breeze' -c 'Breeze by the KDE VDG'
-          ctgen build.toml -d 'breeze/cursors/Breeze_Light/build/x200/' -n 'Breeze-Light' -c 'Breeze Light by the KDE VDG'
+          ctgen build.toml -n 'Breeze' -d 'breeze/cursors/Breeze/build/x200/'
+          ctgen build.toml -n 'Breeze-Light' -d 'breeze/cursors/Breeze_Light/build/x200/'
 
       - name: Package
         run: |
-          zip -j Breeze.zip themes/Breeze-Windows/*
-          zip -j Breeze-Light.zip themes/Breeze-Light-Windows/*
+          zip -jr Breeze.zip themes/Breeze-Windows/
+          zip -jr Breeze-Light.zip themes/Breeze-Light-Windows/
           sha512sum Breeze.zip Breeze-Light.zip > sha512sum
 
       - name: Publish

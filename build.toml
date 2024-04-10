@@ -4,86 +4,113 @@ comment = 'Breeze by the KDE VDG'
 website = 'https://github.com/akiirui/breeze-for-windows'
 
 [config]
-bitmaps_dir = 'breeze/cursors/Breeze/build/x2/' # This config will assigned with `ctgen -d <path>`
-out_dir = 'themes'
+bitmaps_dir = 'breeze/cursors/'
+out_dir = 'themes/'
 platforms = 'windows'
 
 [cursors]
-
 [cursors.fallback_settings]
 win_sizes = [64]
-x_hotspot = 32
-y_hotspot = 32
 win_delay = 1
 
 [cursors.default]
 png = 'default.png'
+win_name = 'Pointer'
 x_hotspot = 8
 y_hotspot = 8
-win_name = 'Pointer'
 
 [cursors.help]
 png = 'help.png'
+win_name = 'Help'
 x_hotspot = 8
 y_hotspot = 8
-win_name = 'Help'
 
 [cursors.progress]
 png = 'progress-*.png'
+win_name = 'Work'
 x_hotspot = 8
 y_hotspot = 8
-win_name = 'Work'
 
 [cursors.wait]
 png = 'wait-*.png'
 win_name = 'Busy'
+x_hotspot = 32
+y_hotspot = 32
 
-[cursors.cross]
+[cursors.crosshair]
 png = 'crosshair.png'
 win_name = 'Cross'
+x_hotspot = 32
+y_hotspot = 32
 
 [cursors.text]
 png = 'text.png'
 win_name = 'Text'
+x_hotspot = 32
+y_hotspot = 32
 
 [cursors.pencil]
 png = 'pencil.png'
+win_name = 'Handwriting'
 x_hotspot = 8
 y_hotspot = 58
-win_name = 'Handwriting'
 
-[cursors.dnd_no_drop]
+[cursors.not-allowed]
 png = 'not-allowed.png'
 win_name = 'Unavailable'
+x_hotspot = 32
+y_hotspot = 32
 
 [cursors.size_ver]
 png = 'size_ver.png'
 win_name = 'Vert'
+x_hotspot = 32
+y_hotspot = 32
 
 [cursors.size_hor]
 png = 'size_hor.png'
 win_name = 'Horz'
+x_hotspot = 32
+y_hotspot = 32
 
 [cursors.size_fdiag]
 png = 'size_fdiag.png'
 win_name = 'Dgn1'
+x_hotspot = 32
+y_hotspot = 32
 
 [cursors.size_bdiag]
 png = 'size_bdiag.png'
 win_name = 'Dgn2'
+x_hotspot = 32
+y_hotspot = 32
 
 [cursors.move]
 png = 'all-scroll.png'
 win_name = 'Move'
+x_hotspot = 32
+y_hotspot = 32
 
 [cursors.center_ptr]
 png = 'center_ptr.png'
+win_name = 'Alternate'
 x_hotspot = 40
 y_hotspot = 8
-win_name = 'Alternate'
 
 [cursors.pointer]
 png = 'pointer.png'
+win_name = 'Link'
 x_hotspot = 32
 y_hotspot = 8
-win_name = 'Link'
+
+[cursors.copy]
+png = 'copy.png'
+win_name = 'Pin'
+x_hotspot = 8
+y_hotspot = 8
+
+[cursors.alias]
+png = 'alias.png'
+win_name = 'Person'
+x_hotspot = 8
+y_hotspot = 8
