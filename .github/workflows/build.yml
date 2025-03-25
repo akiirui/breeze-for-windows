@@ -1,5 +1,4 @@
 name: build
-
 on:
   workflow_dispatch:
   push:
@@ -30,12 +29,12 @@ jobs:
       - name: Build Breeze Source
         working-directory: breeze/cursors/Breeze
         run: |
-          bash build.sh;
+          bash build.sh
 
       - name: Build Breeze Light Source
         working-directory: breeze/cursors/Breeze_Light
         run: |
-          bash build.sh;
+          bash build.sh
 
       - name: Build Breeze
         run: |
@@ -52,4 +51,3 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "Breeze.zip,Breeze-Light.zip,sha512sum"
-          token: ${{ secrets.GITHUB_TOKEN }}
