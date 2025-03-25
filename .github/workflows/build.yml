@@ -17,24 +17,23 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.13"
 
       - name: Install dependencies
         run: |
-          sudo apt-get install -y inkscape x11-apps
-          python -m pip install --upgrade pip clickgen
-          pip install --force-reinstall --upgrade attrs
+          sudo apt-get install -y inkscape x11-apps qt6-base-dev
+          pip install clickgen pyside6 attrs
         continue-on-error: false
 
       - name: Build Breeze Source
         working-directory: breeze/cursors/Breeze
         run: |
-          bash build.sh
+          bash ../src/build.sh
 
       - name: Build Breeze Light Source
         working-directory: breeze/cursors/Breeze_Light
         run: |
-          bash build.sh
+          bash ../src/build.sh
 
       - name: Build Breeze
         run: |
